@@ -7,6 +7,7 @@ const Contact = () => {
       <div className="mx-auto max-w-5xl my-12 px-5">
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-center">
 
+          {/* div 1 */}
           <div className="relative" data-aos="fade-up">
             <img
               src="https://pagedone.io/asset/uploads/1696488602.png"
@@ -87,31 +88,31 @@ const Contact = () => {
             </div>
           </div>
 
-
+          {/* div 2 */}
           <div className="flex flex-col gap-5  rounded-2xl  " data-aos="fade-up">
-            <h2 className="text-3xl font-teko font-bold text-primary">
+            <h2 className="text-2xl  font-semibold  text-secondary">
               Send us a message
             </h2>
             <input
               type="text"
-              className='input input-primary'
+              className='input input-secondary'
               placeholder="Name"
             />
             <input
               type="text"
-              className="input input-primary"
+              className="input input-secondary"
               placeholder="Email"
             />
             <input
               type="text"
               name='phone'
-              className="input input-primary"
+              className="input input-secondary"
               placeholder='Phone number'
             />
 
 
-            <textarea name="message" placeholder='Your message' id="message" rows={3} className='textarea textarea-primary resize-none'></textarea>
-            <button className="btn btn-primary">
+            <textarea name="message" placeholder='Your message' id="message" rows={3} className='textarea textarea-secondary resize-none'></textarea>
+            <button className="btn btn-secondary">
               Send
             </button>
           </div>

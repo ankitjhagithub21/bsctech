@@ -31,7 +31,7 @@ const Reviews = () => {
       <div className="container py-24 mx-auto">
         {/* Header Section */}
         <div className="flex flex-col text-center w-full" data-aos="fade-up">
-          <h2 className="mb-4 bg-primary text-white mx-auto px-4 py-2 rounded-lg text-sm font-semibold tracking-widest uppercase w-fit">
+          <h2 className="mb-4 bg-secondary text-white mx-auto px-4 py-2 rounded-lg text-sm font-semibold tracking-widest uppercase w-fit">
             Reviews
           </h2>
           <h1 className="text-3xl font-semibold tracking-wide font-teko mb-5">
@@ -47,14 +47,14 @@ const Reviews = () => {
               className="p-4 lg:w-1/3 md:w-1/2 w-full"
               data-aos="zoom-in"
             >
-              <div className="flex rounded-lg h-full border hover:shadow-xl transition-shadow border-primary p-4 flex-col">
+              <div className="flex rounded-lg h-full border hover:shadow-xl transition-shadow border-secondary p-4 flex-col">
                 <div className="flex items-center mb-3 gap-2">
                   <img
                     src={review.image}
                     alt={review.name}
                     className="w-12 h-12 object-cover rounded-full"
                   />
-                  <h2 className="text-lg">{review.name}</h2>
+                  <h2 className="text-lg text-secondary font-semibold">{review.name}</h2>
                 </div>
                 <div className="flex-grow">
                   <p className="leading-relaxed text-base">{review.feedback}</p>
