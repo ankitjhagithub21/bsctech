@@ -11,8 +11,8 @@ const Reviews = () => {
                     <h1 class="text-3xl font-semibold tracking-wide font-teko">What Our Client Says ? </h1>
                 </div>
                 <div class="flex flex-wrap">
-                    <div class="p-4 lg:w-1/3 md:w-1/2 w-full" data-aos="zoom-up">
-                        <div class="flex rounded-lg h-full border border-secondary  p-4 flex-col">
+                    <div class="p-4 lg:w-1/3 md:w-1/2 w-full" data-aos="zoom-in">
+                        <div class="flex rounded-lg h-full border border-primary  p-4 flex-col">
                             <div class="flex items-center mb-3 gap-2">
                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1lLrFvgnsMNvUcDd83Tpc-s48XBu_NnT89Q&s" alt="man" className='w-12 h-12 object-cover rounded-full'/>
                                 <h2 class="text-lg  ">John Doe</h2>
@@ -23,8 +23,8 @@ const Reviews = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="p-4 lg:w-1/3 md:w-1/2 w-full" data-aos="zoom-up">
-                        <div class="flex rounded-lg h-full border border-secondary  p-4 flex-col">
+                    <div class="p-4 lg:w-1/3 md:w-1/2 w-full" data-aos="zoom-in">
+                        <div class="flex rounded-lg h-full border border-primary  p-4 flex-col">
                             <div class="flex items-center mb-3 gap-2">
                                <img src="https://img.freepik.com/free-photo/portrait-young-girl-smiling_23-2149260597.jpg?semt=ais_hybrid" alt="man" className='w-12 h-12 object-cover rounded-full'/>
                                 <h2 class="text-lg">Olivia Johnson</h2>
@@ -35,8 +35,8 @@ const Reviews = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="p-4 lg:w-1/3 md:w-1/2 w-full" data-aos="zoom-up">
-                        <div class="flex rounded-lg h-full border border-secondary  p-4 flex-col">
+                    <div class="p-4 lg:w-1/3 md:w-1/2 w-full" data-aos="zoom-in">
+                        <div class="flex rounded-lg h-full border border-primary  p-4 flex-col">
                             <div class="flex items-center mb-3 gap-2">
                                <img src="https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg" alt="man" className='w-12 h-12 object-cover rounded-full'/>
                                 <h2 class="text-lg  ">Jane Smith</h2>
