@@ -4,8 +4,8 @@ const Services2 = () => {
   return (
     <section id='services'>
     <div className="container relative flex flex-col justify-between h-full max-w-6xl px-5 mx-auto xl:px-0 mt-5">
-      <h2 className="mb-1 text-4xl font-teko font-extrabold text-primary" data-aos="fade-up">
-        Services
+      <h2 className="mb-2 text-4xl font-teko font-semibold" data-aos="fade-up">
+        Our <span className='text-primary font-teko'>Services</span>
       </h2>
       <p className="mb-12 text-lg" data-aos="fade-up">
         Here is a few of the awesome Services we provide.

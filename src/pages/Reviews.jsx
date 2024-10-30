@@ -8,7 +8,7 @@ const Reviews = () => {
                 <h2 className=" mb-4 bg-primary text-white  mx-auto px-4 py-2 rounded-lg md:mx-auto text-sm font-semibold tracking-widest  uppercase  w-fit">
                             Reviews
                         </h2>
-                    <h1 class="text-3xl font-semibold tracking-wide font-teko">What Our Client Says ? </h1>
+                    <h1 class="text-3xl font-semibold tracking-wide font-teko mb-5">What Our Client Says ? </h1>
                 </div>
                 <div class="flex flex-wrap">
                     <div class="p-4 lg:w-1/3 md:w-1/2 w-full" data-aos="zoom-in">
