@@ -3,8 +3,8 @@ import React from 'react'
 const Contact = () => {
   return (
 
-    <section className="py-24" id='contact'>
-      <div className="mx-auto max-w-5xl px-5">
+    <section id='contact'>
+      <div className="mx-auto max-w-5xl mb-12 px-5">
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 items-center">
 
           <div className="relative" data-aos="fade-up">

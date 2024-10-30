@@ -3,8 +3,8 @@ import React from 'react'
 const Reviews = () => {
     return (
         <section id="reveiws">
-            <div class="container px-5 py-24 mx-auto">
-                <div class="flex flex-col text-center w-full mb-20" data-aos="fade-up">
+            <div class="container py-24 mx-auto">
+                <div class="flex flex-col text-center w-full" data-aos="fade-up">
                 <h2 className=" mb-4 bg-primary text-white  mx-auto px-4 py-2 rounded-lg md:mx-auto text-sm font-semibold tracking-widest  uppercase  w-fit">
                             Reviews
                         </h2>
