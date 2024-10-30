@@ -8,6 +8,7 @@ import Contact from './Contact'
 import Footer from '../components/Footer'
 import Reviews from './Reviews'
 import Careers from './Careers'
+import Media from './Media'
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <Services2/>
       <Reviews/>
       <Careers/>
+      <Media/>
       <Contact/>
       <Footer/>
     </>

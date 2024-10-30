@@ -29,7 +29,7 @@ const Careers = () => {
       <section className="text-center mb-10">
    
         <h1 className="text-4xl font-semibold font-teko mb-4">
-          Join Our Team!
+          Join <span className="font-teko text-primary">Our Team</span>
         </h1>
         <p className="text-lg">
           We are looking for passionate individuals to help us grow and shape the future.
@@ -60,7 +60,7 @@ const Careers = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="my-16 text-center border border-primary w-fit  mx-auto md:p-10 p-5 rounded-lg" data-aos="zoom-in">
+      <section className="my-16 text-center shadow-xl  w-fit  mx-auto md:p-10 p-5 rounded-xl" data-aos="zoom-in">
         <h2 className="text-2xl md:text-3xl font-semibold   mb-4">
           Don't see the right role?
         </h2>
