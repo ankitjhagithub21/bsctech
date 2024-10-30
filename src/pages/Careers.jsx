@@ -24,9 +24,9 @@ const jobListings = [
 
 const Careers = () => {
   return (
-    <div className="max-w-7xl mx-auto p-5">
+    <section id="careers" className="max-w-7xl mx-auto p-5">
       {/* Hero Section */}
-      <section className="text-center mb-10">
+      <div className="text-center mb-10">
    
         <h1 className="text-4xl font-semibold font-teko mb-4">
           Join <span className="font-teko text-primary">Our Team</span>
@@ -34,10 +34,10 @@ const Careers = () => {
         <p className="text-lg">
           We are looking for passionate individuals to help us grow and shape the future.
         </p>
-      </section>
+      </div>
 
       {/* Job Listings */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {jobListings.map((job, index) => (
           <div
             key={index}
@@ -57,10 +57,10 @@ const Careers = () => {
             </button>
           </div>
         ))}
-      </section>
+      </div>
 
       {/* Call to Action Section */}
-      <section className="my-16 text-center shadow-xl  w-fit  mx-auto md:p-10 p-5 rounded-xl" data-aos="zoom-in">
+      <div className="my-16 text-center shadow-xl  w-fit  mx-auto md:p-10 p-5 rounded-xl" data-aos="zoom-in">
         <h2 className="text-2xl md:text-3xl font-semibold   mb-4">
           Don't see the right role?
         </h2>
@@ -70,8 +70,8 @@ const Careers = () => {
         <button className="btn btn-primary">
           Submit Your Resume
         </button>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

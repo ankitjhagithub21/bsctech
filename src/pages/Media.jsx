@@ -1,18 +1,18 @@
 
 const Media = () => {
     return (
-        <div className="max-w-7xl mx-auto p-5 mb-24">
-            {/* Header Section */}
-            <section className="text-center mb-10">
+        <section id="media" className="max-w-7xl mx-auto p-5 mb-24">
+            {/* Header div */}
+            <div className="text-center mb-10" data-aos="fade-up">
                 <h1 className="text-4xl font-teko font-semibold  mb-4">
                     Our <span className="text-primary font-teko">Media Gallery</span>
                 </h1>
                 <p className="text-lg">
                     Explore our latest articles, videos, and images.
                 </p>
-            </section>
+            </div>
 
-            <div className="carousel rounded-box">
+            <div className="carousel rounded-box" data-aos="fade-up">
                 <div className="carousel-item">
                     <img
                         src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"
@@ -52,7 +52,7 @@ const Media = () => {
 
            
 
-        </div>
+        </section>
     );
 };
 
