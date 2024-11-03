@@ -32,7 +32,7 @@ const Services = () => {
   return (
     <section id="whatwedo" data-aos="fade-up">
       <div className="py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl w-full mx-auto px-5">
           {/* Header Section */}
           <div className="lg:text-center">
             <h2 className="mb-4 bg-primary text-white px-4 py-2 rounded-lg md:w-64 md:mx-auto text-sm font-semibold tracking-widest uppercase w-fit">
@@ -47,19 +47,19 @@ const Services = () => {
           </div>
 
           {/* Services Grid */}
-          <div className="mt-16">
+          <div className="mt-12">
             <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
               {services.map((service, index) => (
                 <div className="relative" key={index} data-aos="fade-up">
                   <dt>
-                    <div className="md:absolute p-3 md:p-0 flex items-center justify-center md:h-12 h-auto w-20 md:w-12 rounded-md bg-primary-500 text-white">
+                    <div className="md:absolute mb-3 lg:mb-0 flex items-center justify-center w-12 rounded-md bg-primary-500 text-white">
                       <img src={service.icon} alt={service.title} />
                     </div>
-                    <p className="md:ml-16 ml-5 text-lg leading-6 font-semibold">
+                    <p className="md:ml-16 ml-0 text-lg text-primary font-semibold">
                       {service.title}
                     </p>
                   </dt>
-                  <dd className="mt-2 md:ml-16 ml-5 text-base">
+                  <dd className="mt-2 md:ml-16 ml-0">
                     {service.description}
                   </dd>
                 </div>

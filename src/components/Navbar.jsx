@@ -27,7 +27,7 @@ const Navbar = () => {
     useEffect(() => {
         const handleScroll = () => {
             const options = {
-                threshold: 0.6, // Adjust based on when you'd like to switch sections (0.6 means 60% of the section should be in view)
+                threshold: 0.6,
             };
 
             const observer = new IntersectionObserver((entries) => {

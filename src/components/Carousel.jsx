@@ -37,7 +37,7 @@ const Carousel = () => {
         {/* Dot Indicators */}
 
       </div>
-      <div className="p-2 flex items-center justify-center gap-3">
+      <div className="pt-5 flex items-center justify-center gap-3">
         {slides.map((_, index) => (
           <button
             key={index}
