@@ -1,28 +1,22 @@
 const nodemailer = require("nodemailer");
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.ethereal.email",
-  port: 587,
-  secure: false, 
-  auth: {
-    user: "bsctech@gmail.com",
-    pass: "jn7jnAPss4f63QBp6D",
-  },
-});
-
-// async..await is not allowed in global scope, must use a wrapper
-async function main() {
-  // send mail with defined transport object
-  const info = await transporter.sendMail({
-    from: '', // sender address
-    to: "bar@example.com, baz@example.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "Hello world?", // plain text body
-    html: "<b>Hello world?</b>", // html body
+const sendMail = async ({ userEmail, subject, text }) => {
+  const transporter = nodemailer.createTransport({
+    host: process.env.HOST,
+    port: process.env.SMTP_PORT,
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.APP_PASSWORD,
+    },
   });
 
-  console.log("Message sent: %s", info.messageId);
-  // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
-}
+  const info = await transporter.sendMail({
+    from: userEmail,
+    to: process.env.EMAIL,
+    subject,
+    text,
+  });
+  return info;
+};
 
-
+module.exports = sendMail;

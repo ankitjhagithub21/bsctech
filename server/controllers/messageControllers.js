@@ -1,46 +1,70 @@
-const Message = require("../models/Message")
-const sendMessage = async(req,res) =>{
-    try{
-        const {name,email,phone,message} = req.body;
+const Message = require("../models/Message");
+const sendMail = require("../utils/sendEmail");
+
+const sendMessage = async (req, res) => {
+  try {
+    const { name, email, phone, message } = req.body;
+
+    if (!name || !email || !phone || !message) {
+      return res.status(400).json({ success: false, message: "All fields are required." });
+    }
+
+    const newMessage = new Message({
+      name,
+      email,
+      phone,
+      message,
+    });
+    const savedMessage = await newMessage.save();
+
+    if (savedMessage) {
+      const subject = `BscTech - New Message`;
+      const text = `
+        You have received a new message from BscTech:
+      
+        Name: ${name}
+        Email: ${email}
+        Phone: ${phone}
         
-        if(!name || !email || !phone || !message){
-            return res.status(400).json({success:false,message:"All fields are required."})
-        }
+        Message:
+        ${message}
+      `;
 
-        const newMessage = new Message({
-            name,
-            email,
-            phone,
-            message
-        })
-        await newMessage.save()
+      
+      const info = await sendMail({ userEmail: email, subject, text });
 
-        res.status(201).json({success:true,message:"Message sent successfully."})
-
-    }catch(error){
-        res.status(500).json({success:false,message:"Server error."})
+      if (info.accepted.length > 0) {
+        return res.status(201).json({ success: true, message: "Message sent successfully." });
+      } else {
+        return res.status(500).json({ success: false, message: "Failed to send email." });
+      }
     }
-} 
 
-const getAllMessages = async(req,res) =>{
-    try{
-        const messages = await Message.find();
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Server error." });
+  }
+};
 
-       if(!messages){
-        return res.status(404).json({success:false,message:"Message not found."})
-       }
 
-       res.status(200).json({success:true,messages})
-       
+const getAllMessages = async (req, res) => {
+  try {
+    const messages = await Message.find();
 
-    }catch(error){
-        res.status(500).json({success:false,message:"Server error."})
+    if (!messages) {
+      return res.status(404).json({ success: false, message: "Message not found." })
     }
-} 
+
+    res.status(200).json({ success: true, messages })
+
+
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Server error." })
+  }
+}
 
 
 
 module.exports = {
-    sendMessage,
-    getAllMessages
+  sendMessage,
+  getAllMessages
 }
