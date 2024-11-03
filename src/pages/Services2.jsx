@@ -62,7 +62,7 @@ const Services2 = () => {
             className={`relative h-full p-5 bg-white border-2 rounded-lg ${service.borderColor} transition-transform transform group-hover:scale-105`}
           >
             <div className="flex items-center -mt-1">
-              <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
+              <h3 className="my-2  text-lg font-semibold text-primary">
                 {service.title}
               </h3>
             </div>

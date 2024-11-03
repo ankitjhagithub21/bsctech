@@ -35,7 +35,7 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Section */}
           <div className="lg:text-center">
-            <h2 className="mb-4 bg-secondary text-white px-4 py-2 rounded-lg md:w-64 md:mx-auto text-sm font-semibold tracking-widest uppercase w-fit">
+            <h2 className="mb-4 bg-primary text-white px-4 py-2 rounded-lg md:w-64 md:mx-auto text-sm font-semibold tracking-widest uppercase w-fit">
               What We Do?
             </h2>
             <p className="mt-4 font-teko text-3xl font-semibold sm:text-4xl">
@@ -52,7 +52,7 @@ const Services = () => {
               {services.map((service, index) => (
                 <div className="relative" key={index} data-aos="fade-up">
                   <dt>
-                    <div className="md:absolute p-3 md:p-0 flex items-center justify-center md:h-12 h-auto w-20 md:w-12 rounded-md bg-secondary-500 text-white">
+                    <div className="md:absolute p-3 md:p-0 flex items-center justify-center md:h-12 h-auto w-20 md:w-12 rounded-md bg-primary-500 text-white">
                       <img src={service.icon} alt={service.title} />
                     </div>
                     <p className="md:ml-16 ml-5 text-lg leading-6 font-semibold">
