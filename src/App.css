@@ -46,3 +46,6 @@ nav a{
     font-size: 14px;
 }
 
+.nav-link {
+    transition: 0.3s ease, color 0.3s ease;
+}

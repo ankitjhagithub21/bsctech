@@ -3,30 +3,67 @@ import { RiMenu2Line } from "react-icons/ri";
 
 const Navbar = () => {
     const links = [
-        { id: 1, name: "Home", path: "#home" },
-        { id: 2, name: "What We Do", path: "#whatwedo" },
-        { id: 3, name: "About", path: "#about" },
-        { id: 4, name: "Our Services", path: "#services" },
-        { id: 5, name: "Careers", path: "#careers" },
-        { id: 6, name: "Media", path: "#media" },
-        { id: 7, name: "Contact Us", path: "#contact" },
+        { id: 1, name: "Home", path: "#home", sectionId: "home" },
+        { id: 2, name: "What We Do", path: "#whatwedo", sectionId: "whatwedo" },
+        { id: 3, name: "About", path: "#about", sectionId: "about" },
+        { id: 4, name: "Our Services", path: "#services", sectionId: "services" },
+        { id: 5, name: "Careers", path: "#careers", sectionId: "careers" },
+        { id: 6, name: "Media", path: "#media", sectionId: "media" },
+        { id: 7, name: "Contact Us", path: "#contact", sectionId: "contact" },
     ];
     
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
-    const [selectedLink, setSelectedLink] = useState(1); // State to track the selected link
+    const [selectedLink, setSelectedLink] = useState(1);
 
-    // Effect to update the theme on the document when the state changes
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme); // Store the current theme in localStorage
+        localStorage.setItem('theme', theme);
     }, [theme]);
 
     const toggleTheme = () => {
         setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const options = {
+                threshold: 0.6, // Adjust based on when you'd like to switch sections (0.6 means 60% of the section should be in view)
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        const link = links.find(link => link.sectionId === sectionId);
+                        if (link) {
+                            setSelectedLink(link.id);
+                        }
+                    }
+                });
+            }, options);
+
+            links.forEach((link) => {
+                const section = document.getElementById(link.sectionId);
+                if (section) observer.observe(section);
+            });
+
+            return () => {
+                links.forEach((link) => {
+                    const section = document.getElementById(link.sectionId);
+                    if (section) observer.unobserve(section);
+                });
+            };
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     const handleLinkClick = (id) => {
-        setSelectedLink(id); // Set the selected link when clicked
+        setSelectedLink(id);
     };
 
     return (
@@ -46,7 +83,6 @@ const Navbar = () => {
                                     <a
                                         href={link.path}
                                         onClick={() => handleLinkClick(link.id)}
-                                       
                                     >
                                         {link.name}
                                     </a>
@@ -64,11 +100,10 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1 gap-1">
                         {
                             links.map((link) => (
-                                <li key={link.id} className={`${selectedLink === link.id ? 'bg-primary text-white' : 'hover:text-white hover:bg-primary'}  rounded-lg`}>
+                                <li key={link.id} className={`${selectedLink === link.id ? 'bg-primary text-white' : 'hover:text-white hover:bg-primary'}  rounded-lg nav-link`}>
                                     <a
                                         href={link.path}
                                         onClick={() => handleLinkClick(link.id)}
-                                       
                                     >
                                         {link.name}
                                     </a>
@@ -79,17 +114,14 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <button className="btn btn-ghost btn-circle" onClick={toggleTheme}>
-                        <div className="indicator">
-                            <label className="swap swap-rotate">
-                                <input
-                                    type="checkbox"
-                                    className="theme-controller"
-                                    checked={theme === 'dark'}
-                                    onChange={toggleTheme}
-                                />
-
-                                {/* Sun icon */}
-                                <svg
+                        <label className="swap swap-rotate">
+                            <input
+                                type="checkbox"
+                                checked={theme === 'dark'}
+                                onChange={toggleTheme}
+                            />
+                            {/* Sun and Moon icons */}
+                            <svg
                                     className="swap-off h-10 w-10 fill-current"
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24">
@@ -105,8 +137,7 @@ const Navbar = () => {
                                     <path
                                         d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
                                 </svg>
-                            </label>
-                        </div>
+                        </label>
                     </button>
                 </div>
             </div>

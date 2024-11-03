@@ -28,7 +28,7 @@ const reviews = [
 const Reviews = () => {
   return (
     <section id="reviews">
-      <div className="container py-24 mx-auto">
+      <div className="container py-12 mx-auto">
         {/* Header Section */}
         <div className="flex flex-col text-center w-full" data-aos="fade-up">
           <h2 className="mb-4 bg-primary text-white mx-auto px-4 py-2 rounded-lg text-sm font-semibold tracking-widest uppercase w-fit">
