@@ -29,7 +29,7 @@ const Careers = () => {
       <div className="text-center mb-10">
    
         <h1 className="text-4xl font-semibold font-teko mb-4">
-          Join <span className="font-teko text-secondary">Our Team</span>
+          Join <span className="font-teko text-primary">Our Team</span>
         </h1>
         <p className="text-lg">
           We are looking for passionate individuals to help us grow and shape the future.
@@ -42,9 +42,9 @@ const Careers = () => {
           <div
             key={index}
             data-aos="zoom-in"
-            className="border-secondary border rounded-lg p-6 hover:shadow-xl transition-shadow"
+            className="border-primary border rounded-lg p-6 hover:shadow-xl transition-shadow"
           >
-            <h2 className="text-3xl font-semibold text-secondary font-teko tracking-wider mb-2">
+            <h2 className="text-3xl font-semibold text-primary font-teko tracking-wider mb-2">
               {job.title}
             </h2>
             <p className="text-sm mb-1">
@@ -52,7 +52,7 @@ const Careers = () => {
             </p>
             <p className="text-sm mb-3">💼 {job.type}</p>
             <p>{job.description}</p>
-            <button className="btn btn-secondary btn-sm mt-4">
+            <button className="btn btn-primary btn-sm mt-4">
               Apply Now
             </button>
           </div>
@@ -67,7 +67,7 @@ const Careers = () => {
         <p className="mb-4">
           Send us your resume, and we'll reach out if something opens up!
         </p>
-        <button className="btn btn-secondary">
+        <button className="btn btn-primary">
           Submit Your Resume
         </button>
       </div>
