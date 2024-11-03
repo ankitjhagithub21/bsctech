@@ -1,7 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { toast } from 'react-toastify'
 
 const Contact = () => {
+  const [loading,setLoading] = useState()  
+  const handleSendMessage = async(e) => {
+    e.preventDefault()
+    
+    const formData = new FormData(e.target)
+    const userData = Object.fromEntries(formData.entries())
+    const {name,email,phone,message} = userData
+    setLoading(true)
+    try{
+      
+      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/messages`,{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({name,email,phone,message})
+
+      })
+      const data = await res.json()
+      if(data.success){
+          toast.success(data.message)
+          e.target.reset()
+      }else{
+        toast.error(data.message)
+      }
+     
+    }catch(error){
+      console.log(error)
+      toast.error("Message not sent.")
+    }finally{
+      setLoading(false)
+    }
+    
+
+  }
   return (
+
 
     <section id='contact'>
       <div className="mx-auto max-w-5xl my-12 px-5">
@@ -89,32 +126,44 @@ const Contact = () => {
           </div>
 
           {/* div 2 */}
-          <div className="flex flex-col gap-5  rounded-2xl  " data-aos="fade-up">
-            <h2 className="text-2xl  font-semibold  text-primary">
+          <div data-aos="fade-up">
+            <h2 className="text-2xl mb-5  font-semibold  text-primary">
               Send us a message
             </h2>
-            <input
-              type="text"
-              className='input input-primary'
-              placeholder="Name"
-            />
-            <input
-              type="text"
-              className="input input-primary"
-              placeholder="Email"
-            />
-            <input
-              type="text"
-              name='phone'
-              className="input input-primary"
-              placeholder='Phone number'
-            />
+            <form className='flex flex-col gap-4' onSubmit={handleSendMessage}>
+              <input
+                type="text"
+                name='name'
+                className='input input-primary'
+                placeholder="Name"
+                required
+              />
+              <input
+                type="text"
+                name='email'
+                className="input input-primary"
+                placeholder="Email"
+                required
+              />
+              <input
+                type="text"
+                name='phone'
+                className="input input-primary"
+                placeholder='Phone number'
+                required
+              />
 
 
-            <textarea name="message" placeholder='Your message' id="message" rows={3} className='textarea textarea-primary resize-none'></textarea>
-            <button className="btn btn-primary">
-              Send
-            </button>
+              <textarea name="message" placeholder='Your message' id="message" rows={3} className='textarea textarea-primary resize-none' required></textarea>
+              <button disabled={loading} className="btn btn-primary" type='submit'>
+                {
+                  loading && <span className="loading loading-spinner"></span>
+                }
+                {
+                  loading ? 'Sending...' : 'Send'
+                }
+              </button>
+            </form>
           </div>
         </div>
       </div>
