@@ -22,6 +22,25 @@ const sendMessage = async(req,res) =>{
     }
 } 
 
+const getAllMessages = async(req,res) =>{
+    try{
+        const messages = await Message.find();
+
+       if(!messages){
+        return res.status(404).json({success:false,message:"Message not found."})
+       }
+
+       res.status(200).json({success:true,messages})
+       
+
+    }catch(error){
+        res.status(500).json({success:false,message:"Server error."})
+    }
+} 
 
 
-module.exports = sendMessage
+
+module.exports = {
+    sendMessage,
+    getAllMessages
+}
