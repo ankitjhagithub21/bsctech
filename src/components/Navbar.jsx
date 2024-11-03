@@ -3,7 +3,7 @@ import { RiMenu2Line } from "react-icons/ri";
 
 const Navbar = () => {
     const links = [
-        { id: 1, name: "Home", path: "#" },
+        { id: 1, name: "Home", path: "#home" },
         { id: 2, name: "What We Do", path: "#whatwedo" },
         { id: 3, name: "About", path: "#about" },
         { id: 4, name: "Our Services", path: "#services" },
@@ -11,8 +11,8 @@ const Navbar = () => {
         { id: 6, name: "Media", path: "#media" },
         { id: 7, name: "Contact Us", path: "#contact" },
     ];
-
-    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'winter');
+    
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
     const [selectedLink, setSelectedLink] = useState(1); // State to track the selected link
 
     // Effect to update the theme on the document when the state changes
@@ -22,7 +22,7 @@ const Navbar = () => {
     }, [theme]);
 
     const toggleTheme = () => {
-        setTheme((prevTheme) => (prevTheme === 'winter' ? 'business' : 'winter'));
+        setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
     };
 
     const handleLinkClick = (id) => {
@@ -39,23 +39,23 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            {
+                            className="menu menu-sm dropdown-content bg-base-100  z-[1] mt-2 w-screen p-2 shadow">
+                            { 
                                 links.map((link) => (
-                                    <li key={link.id} >
-                                        <a
-                                            href={link.path}
-                                            onClick={() => handleLinkClick(link.id)}
-                                            
-                                        >
-                                            {link.name}
-                                        </a>
-                                    </li>
+                                    <li key={link.id} className={` ${selectedLink === link.id ? 'bg-primary text-white' : 'hover:text-white hover:bg-primary'} my-1 py-1 rounded-lg`}>
+                                    <a
+                                        href={link.path}
+                                        onClick={() => handleLinkClick(link.id)}
+                                       
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
                                 ))
                             }
                         </ul>
                     </div>
-                    <a href='#' className={`lg:text-2xl text-xl min-w-fit font-semibold flex items-center gap-2 rounded-lg px-2 py-1 ${theme === "winter" ? 'text-[#0E2072]' : 'text-white'} justify-center`}>
+                    <a href='#' className={`lg:text-2xl text-xl min-w-fit font-semibold flex items-center gap-2 rounded-lg px-2 py-1 ${theme === "light" ? 'text-[#0E2072]' : 'text-white'} justify-center`}>
                         <img src="./logo.jpg" alt="bsctech_logo" className='w-8 rounded-lg' />
                         BSC TECH
                     </a>
@@ -64,7 +64,7 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1 gap-1">
                         {
                             links.map((link) => (
-                                <li key={link.id} className={`${selectedLink === link.id ? 'bg-primary text-white' : 'hover:text-white hover:bg-primary'}  rounded-full`}>
+                                <li key={link.id} className={`${selectedLink === link.id ? 'bg-primary text-white' : 'hover:text-white hover:bg-primary'}  rounded-lg`}>
                                     <a
                                         href={link.path}
                                         onClick={() => handleLinkClick(link.id)}
@@ -84,7 +84,7 @@ const Navbar = () => {
                                 <input
                                     type="checkbox"
                                     className="theme-controller"
-                                    checked={theme === 'business'}
+                                    checked={theme === 'dark'}
                                     onChange={toggleTheme}
                                 />
 

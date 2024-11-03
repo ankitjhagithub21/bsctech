@@ -20,7 +20,7 @@ const Carousel = () => {
   };
 
   return (
-    <section className='relative'>
+    <section  id="home">
       <div className="carousel-container overflow-hidden w-full">
         {/* Carousel Images */}
         <div
