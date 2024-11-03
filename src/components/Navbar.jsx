@@ -35,7 +35,9 @@ const Navbar = () => {
                             <li><a href='#contact'>Contact Us</a></li>
                         </ul>
                     </div>
-                    <a href='#' className="text-2xl font-bold">BSC TECH</a>
+                    <a href='#' className="lg:text-2xl text-xl min-w-fit font-semibold flex items-center gap-2 bg-[#0E2072] rounded-lg px-2 py-1 text-white justify-center">
+                        <img src="./logo.jpg" alt="bsctech_logo" className='w-8 rounded-lg' />
+                        BSC TECH</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
