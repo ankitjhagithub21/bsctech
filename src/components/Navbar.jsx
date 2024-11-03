@@ -1,9 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { RiMenu2Line } from "react-icons/ri";
 
-
 const Navbar = () => {
-    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+    const links = [
+        { id: 1, name: "Home", path: "#" },
+        { id: 2, name: "What We Do", path: "#whatwedo" },
+        { id: 3, name: "About", path: "#about" },
+        { id: 4, name: "Our Services", path: "#services" },
+        { id: 5, name: "Careers", path: "#careers" },
+        { id: 6, name: "Media", path: "#media" },
+        { id: 7, name: "Contact Us", path: "#contact" },
+    ];
+
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'winter');
+    const [selectedLink, setSelectedLink] = useState(1); // State to track the selected link
 
     // Effect to update the theme on the document when the state changes
     useEffect(() => {
@@ -12,7 +22,11 @@ const Navbar = () => {
     }, [theme]);
 
     const toggleTheme = () => {
-        setTheme((prevTheme) => (prevTheme === 'light' ? 'forest' : 'light'));
+        setTheme((prevTheme) => (prevTheme === 'winter' ? 'business' : 'winter'));
+    };
+
+    const handleLinkClick = (id) => {
+        setSelectedLink(id); // Set the selected link when clicked
     };
 
     return (
@@ -20,46 +34,58 @@ const Navbar = () => {
             <div className="navbar bg-base-100 md:px-5 px-0">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost  lg:hidden">
-                            <RiMenu2Line size={25}/>
+                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                            <RiMenu2Line size={25} />
                         </div>
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li><a href='#'>Home</a></li>
-                            <li><a href='#about'>About Us</a></li>
-                            <li><a href='#whatwedo'>What We Do</a></li>
-                            <li><a href='#services'>Our Services</a></li>
-                            <li><a href='#careers'>Careers</a></li>
-                            <li><a href='#media'>Media</a></li>
-                            <li><a href='#contact'>Contact Us</a></li>
+                            {
+                                links.map((link) => (
+                                    <li key={link.id} >
+                                        <a
+                                            href={link.path}
+                                            onClick={() => handleLinkClick(link.id)}
+                                            
+                                        >
+                                            {link.name}
+                                        </a>
+                                    </li>
+                                ))
+                            }
                         </ul>
                     </div>
-                    <a href='#' className={`lg:text-2xl text-xl min-w-fit font-semibold flex items-center gap-2  rounded-lg px-2 py-1  ${theme=="light" ? 'text-[#0E2072]':'text-white' } justify-center`}>
+                    <a href='#' className={`lg:text-2xl text-xl min-w-fit font-semibold flex items-center gap-2 rounded-lg px-2 py-1 ${theme === "winter" ? 'text-[#0E2072]' : 'text-white'} justify-center`}>
                         <img src="./logo.jpg" alt="bsctech_logo" className='w-8 rounded-lg' />
-                        BSC TECH</a>
+                        BSC TECH
+                    </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        <li><a href='#'>Home</a></li>
-                        <li><a href='#about'>About</a></li>
-                        <li><a href='#whatwedo'>What We Do</a></li>
-                        <li><a href='#services'>Our Services</a></li>
-                        <li><a href='#careers'>Careers</a></li>
-                        <li><a href='#media'>Media</a></li>
-                        <li><a href='#contact'>Contact Us</a></li>
+                    <ul className="menu menu-horizontal px-1 gap-1">
+                        {
+                            links.map((link) => (
+                                <li key={link.id} className={`${selectedLink === link.id ? 'bg-primary text-white' : 'hover:text-white hover:bg-primary'}  rounded-full`}>
+                                    <a
+                                        href={link.path}
+                                        onClick={() => handleLinkClick(link.id)}
+                                       
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end">
                     <button className="btn btn-ghost btn-circle" onClick={toggleTheme}>
                         <div className="indicator">
                             <label className="swap swap-rotate">
-                                {/* Checkbox controls state */}
                                 <input
                                     type="checkbox"
                                     className="theme-controller"
-                                    checked={theme === 'forest'}
-                                    onChange={toggleTheme} // Trigger theme change
+                                    checked={theme === 'business'}
+                                    onChange={toggleTheme}
                                 />
 
                                 {/* Sun icon */}

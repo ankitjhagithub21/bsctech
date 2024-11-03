@@ -67,7 +67,7 @@ const Careers = () => {
         <p className="mb-4">
           Send us your resume, and we'll reach out if something opens up!
         </p>
-        <button className="btn btn-primary">
+        <button className="btn btn-primary btn-sm">
           Submit Your Resume
         </button>
       </div>

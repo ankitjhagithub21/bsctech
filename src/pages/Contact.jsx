@@ -90,29 +90,29 @@ const Contact = () => {
 
           {/* div 2 */}
           <div className="flex flex-col gap-5  rounded-2xl  " data-aos="fade-up">
-            <h2 className="text-2xl  font-semibold  text-secondary">
+            <h2 className="text-2xl  font-semibold  text-primary">
               Send us a message
             </h2>
             <input
               type="text"
-              className='input input-secondary'
+              className='input input-primary'
               placeholder="Name"
             />
             <input
               type="text"
-              className="input input-secondary"
+              className="input input-primary"
               placeholder="Email"
             />
             <input
               type="text"
               name='phone'
-              className="input input-secondary"
+              className="input input-primary"
               placeholder='Phone number'
             />
 
 
-            <textarea name="message" placeholder='Your message' id="message" rows={3} className='textarea textarea-secondary resize-none'></textarea>
-            <button className="btn btn-secondary">
+            <textarea name="message" placeholder='Your message' id="message" rows={3} className='textarea textarea-primary resize-none'></textarea>
+            <button className="btn btn-primary">
               Send
             </button>
           </div>
