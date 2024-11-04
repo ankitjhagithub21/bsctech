@@ -86,7 +86,7 @@ const Services2 = () => {
   return (
     <section id="services">
       <div className=" relative flex flex-col justify-between h-full max-w-7xl px-5 mx-auto ">
-        <h2 className="mb-2 text-4xl font-lora font-bold" data-aos="fade-up">
+        <h2 className="mb-2 font-semibold font-lora text-3xl" data-aos="fade-up">
           Our <span className="text-primary font-lora">Services</span>
         </h2>
         <p className="mb-12 text-lg" data-aos="fade-up">

@@ -14,8 +14,8 @@ const About = () => {
                     <p className="border-b-2 border-primary uppercase w-fit" data-aos="fade-up">
                         About us
                     </p>
-                    <h2 className="my-4 font-semibold font-lora text-4xl " data-aos="fade-up">
-                        About <span className="text-primary font-">Our Company</span>
+                    <h2 className="my-4 font-semibold font-lora text-3xl " data-aos="fade-up">
+                        About <span className="text-primary font-lora">Our Company</span>
                     </h2>
                     <p data-aos="fade-up">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid,

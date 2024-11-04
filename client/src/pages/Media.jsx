@@ -6,7 +6,7 @@ const Media = () => {
             <div className="max-w-7xl w-full mx-auto px-5 py-12">
                 {/* Header div */}
                 <div className="text-center mb-10" data-aos="fade-up">
-                    <h1 className="text-4xl font-lora font-semibold  mb-4">
+                    <h1 className="font-semibold font-lora text-3xl mb-4">
                         Our <span className="text-primary font-lora">Media Gallery</span>
                     </h1>
                     <p className="text-lg">

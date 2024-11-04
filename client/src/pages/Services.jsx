@@ -38,10 +38,10 @@ const Services = () => {
             <h2 className="mb-4 bg-primary text-white px-4 py-2 rounded-lg md:w-64 md:mx-auto text-sm font-semibold tracking-widest uppercase w-fit">
               What We Do?
             </h2>
-            <p className="mt-4 font-lora text-3xl font-semibold sm:text-4xl">
+            <p className="mt-4 font-lora text-3xl font-semibold ">
               We know tech, we know finance. We are fintech experts.
             </p>
-            <p className="mt-4 max-w-2xl text-lg lg:mx-auto" data-aos="fade-up">
+            <p className="mt-4 max-w-2xl  lg:mx-auto" data-aos="fade-up">
               We handle taxation for all countries we operate in. We care for our customers and help them manage cashflows effectively.
             </p>
           </div>

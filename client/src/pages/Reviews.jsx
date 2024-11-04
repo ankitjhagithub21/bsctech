@@ -31,12 +31,13 @@ const Reviews = () => {
       <div className="container py-12 mx-auto">
         {/* Header Section */}
         <div className="flex flex-col text-center w-full" data-aos="fade-up">
-          <h2 className="mb-4 bg-primary text-white mx-auto px-4 py-2 rounded-lg text-sm font-semibold tracking-widest uppercase w-fit">
-            Reviews
-          </h2>
-          <h1 className="text-3xl font font-lora mb-5">
-            What Our Clients Say?
+          
+          <h1 className="font-semibold font-lora text-3xl mb-3">
+            What Our <span className='text-primary font-lora'>Clients Say?</span>
           </h1>
+          <p className='mb-5 px-5'>
+            Here are some of our clients review, how our services have made an impact on their journey.
+          </p>
         </div>
 
         {/* Reviews Grid */}

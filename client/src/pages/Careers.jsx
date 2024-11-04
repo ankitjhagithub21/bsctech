@@ -29,7 +29,7 @@ const Careers = () => {
       {/* Hero Section */}
       <div className="text-center mb-10">
    
-        <h1 className="text-4xl font-semibold font-teko mb-4">
+        <h1 className="font-semibold font-lora text-3xl mb-4">
           Join <span className="font-lora text-primary">Our Team</span>
         </h1>
         <p className="text-lg">
