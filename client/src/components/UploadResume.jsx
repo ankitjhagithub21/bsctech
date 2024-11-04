@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import axios from 'axios';
 
 const UploadResume = () => {
@@ -11,7 +12,7 @@ const UploadResume = () => {
 
     async function handleUploadResume(event) {
         event.preventDefault();
-        
+
         if (!file) return;
 
         const url = `${import.meta.env.VITE_SERVER_URL}/api/resume`;
@@ -22,7 +23,7 @@ const UploadResume = () => {
             headers: {
                 'content-type': 'multipart/form-data',
             },
-            onUploadProgress: function(progressEvent) {
+            onUploadProgress: function (progressEvent) {
                 const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
                 setUploadProgress(percentCompleted);
             }
@@ -30,14 +31,19 @@ const UploadResume = () => {
 
         try {
             const response = await axios.post(url, formData, config);
-            console.log(response.data);
 
-            // Reset form and upload progress after successful upload
-            setFile(null);
-            setUploadProgress(0);
-            alert("Resume uploaded successfully!");
+           
+            if (response.data.success) {
+                toast.success(response.data.message);
+                setFile(null);
+               
+            } else {
+                toast.error(response.data.message)
+            }
         } catch (error) {
             console.error("Error uploading file: ", error);
+        }finally{
+            setUploadProgress(0);
         }
     }
 
