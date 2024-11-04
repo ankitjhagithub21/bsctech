@@ -69,7 +69,7 @@ const Services2 = () => {
             className={`relative h-full p-5 bg-white border-2 rounded-lg ${service.borderColor} transition-transform transform group-hover:scale-105`}
           >
             <div className="flex items-center -mt-1">
-              <h3 className={`my-2 text-lg font-semibold ${service.textColor}`}>
+              <h3 className={`my-2 text-lg font-lora font-bold ${service.textColor}`}>
                 {service.title}
               </h3>
             </div>
@@ -86,8 +86,8 @@ const Services2 = () => {
   return (
     <section id="services">
       <div className=" relative flex flex-col justify-between h-full max-w-7xl px-5 mx-auto ">
-        <h2 className="mb-2 text-4xl font-teko font-semibold" data-aos="fade-up">
-          Our <span className="text-primary font-teko">Services</span>
+        <h2 className="mb-2 text-4xl font-lora font-bold" data-aos="fade-up">
+          Our <span className="text-primary font-lora">Services</span>
         </h2>
         <p className="mb-12 text-lg" data-aos="fade-up">
           Here are a few of the awesome services we provide.

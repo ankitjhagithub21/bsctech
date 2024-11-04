@@ -30,7 +30,7 @@ const Careers = () => {
       <div className="text-center mb-10">
    
         <h1 className="text-4xl font-semibold font-teko mb-4">
-          Join <span className="font-teko text-primary">Our Team</span>
+          Join <span className="font-lora text-primary">Our Team</span>
         </h1>
         <p className="text-lg">
           We are looking for passionate individuals to help us grow and shape the future.
@@ -45,7 +45,7 @@ const Careers = () => {
             data-aos="zoom-in"
             className="border-primary border rounded-lg p-6 hover:shadow-xl transition-shadow"
           >
-            <h2 className="text-3xl font-semibold text-primary font-teko tracking-wider mb-2">
+            <h2 className="text-2xl font-semibold text-primary font-lora mb-5">
               {job.title}
             </h2>
             <p className="text-sm mb-1">

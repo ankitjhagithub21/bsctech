@@ -38,7 +38,7 @@ const Services = () => {
             <h2 className="mb-4 bg-primary text-white px-4 py-2 rounded-lg md:w-64 md:mx-auto text-sm font-semibold tracking-widest uppercase w-fit">
               What We Do?
             </h2>
-            <p className="mt-4 font-teko text-3xl font-semibold sm:text-4xl">
+            <p className="mt-4 font-lora text-3xl font-semibold sm:text-4xl">
               We know tech, we know finance. We are fintech experts.
             </p>
             <p className="mt-4 max-w-2xl text-lg lg:mx-auto" data-aos="fade-up">
@@ -55,7 +55,7 @@ const Services = () => {
                     <div className="md:absolute mb-3 lg:mb-0 flex items-center justify-center w-12 rounded-md bg-primary-500 text-white">
                       <img src={service.icon} alt={service.title} />
                     </div>
-                    <p className="md:ml-16 ml-0 text-lg text-primary font-semibold">
+                    <p className="md:ml-16 ml-0 text-xl text-primary font-lora font-bold">
                       {service.title}
                     </p>
                   </dt>

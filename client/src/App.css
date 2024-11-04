@@ -1,24 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 
 
 * {
-    font-family: "Rubik", serif;
+    font-family: "Inter", serif;
     outline: none;
     
 }
 
+.font-lora{
+    font-family: "Lora", serif;
+}
 
 .carousel-item img {
     height: 400px;
     width: 100%;
     object-fit: cover;
 }
-.font-teko{
-    font-family: "Lora", serif;
-    font-weight: bold;
-}
+
 
 html {
     scroll-behavior: smooth;

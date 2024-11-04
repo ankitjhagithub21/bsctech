@@ -52,7 +52,7 @@ const Contact = () => {
               alt="ContactUs"
               className=" lg:rounded-l-2xl rounded-2xl bg-blend-multiply bg-indigo-700"
             />
-            <h1 className="text-4xl font-semibold  font-teko text-indigo-700 leading-10 absolute top-11 left-5 md:left-11">
+            <h1 className="text-4xl font-semibold  font-lora text-indigo-700 leading-10 absolute top-11 left-5 md:left-11">
               Contact us
             </h1>
             <div className="absolute bottom-0 w-full lg:p-11 p-5">
@@ -128,7 +128,7 @@ const Contact = () => {
 
           {/* div 2 */}
           <div data-aos="fade-up">
-            <h2 className="text-2xl mb-5  font-semibold  text-primary">
+            <h2 className="text-2xl mb-5  font-bold font-lora text-primary">
               Send us a message
             </h2>
             <form className='flex flex-col gap-4' onSubmit={handleSendMessage}>

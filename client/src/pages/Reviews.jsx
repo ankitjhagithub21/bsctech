@@ -34,7 +34,7 @@ const Reviews = () => {
           <h2 className="mb-4 bg-primary text-white mx-auto px-4 py-2 rounded-lg text-sm font-semibold tracking-widest uppercase w-fit">
             Reviews
           </h2>
-          <h1 className="text-3xl font-semibold tracking-wide font-teko mb-5">
+          <h1 className="text-3xl font font-lora mb-5">
             What Our Clients Say?
           </h1>
         </div>
@@ -54,7 +54,7 @@ const Reviews = () => {
                     alt={review.name}
                     className="w-12 h-12 object-cover rounded-full"
                   />
-                  <h2 className="text-lg text-primary font-semibold">{review.name}</h2>
+                  <h2 className="text-lg text-primary font-lora  tracking-wide">{review.name}</h2>
                 </div>
                 <div className="flex-grow">
                   <p className="leading-relaxed text-base">{review.feedback}</p>

@@ -49,7 +49,7 @@ const UploadResume = () => {
 
     return (
         <div className="my-16 text-center shadow-xl w-fit mx-auto md:p-10 p-5 rounded-xl" data-aos="zoom-in">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+            <h2 className="text-2xl md:text-3xl font-semibold font-lora mb-4">
                 Don't see the right role?
             </h2>
             <p className="mb-4">
