@@ -55,7 +55,7 @@ const Services = () => {
                     <div className="md:absolute mb-3 lg:mb-0 flex items-center justify-center w-12 rounded-md bg-primary-500 text-white">
                       <img src={service.icon} alt={service.title} />
                     </div>
-                    <p className="md:ml-16 ml-0 text-xl text-primary font-lora font-bold">
+                    <p className="md:ml-16 ml-0 text-xl text-primary font-lora font-semibold">
                       {service.title}
                     </p>
                   </dt>

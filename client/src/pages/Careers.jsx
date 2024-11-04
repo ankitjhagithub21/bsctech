@@ -43,7 +43,7 @@ const Careers = () => {
           <div
             key={index}
             data-aos="zoom-in"
-            className="border-primary border rounded-lg p-6 hover:shadow-xl transition-shadow"
+            className="border-primary border rounded-lg md:p-6 p-4 hover:shadow-xl transition-shadow"
           >
             <h2 className="text-2xl font-semibold text-primary font-lora mb-5">
               {job.title}
