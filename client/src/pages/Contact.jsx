@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
+import { IoIosSend } from "react-icons/io";
 
 const Contact = () => {
   const [loading,setLoading] = useState()  
@@ -162,6 +163,7 @@ const Contact = () => {
                 {
                   loading ? 'Sending...' : 'Send'
                 }
+                <IoIosSend size={20}/>   
               </button>
             </form>
           </div>

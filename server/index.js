@@ -3,12 +3,14 @@ const express = require('express')
 const cors = require('cors')
 const connectDB = require('./db/conn')
 const messageRouter = require('./routes/messageRoutes')
+const resumeRouter = require('./routes/resumeRoutes')
 const app = express()
 const port = process.env.PORT || 5000
 
 
 connectDB()
 
+app.use(express.static("./public"))
 app.use(express.json())
 app.use(cors({
   origin:process.env.ORIGIN,
@@ -23,6 +25,7 @@ app.get('/', (req, res) => {
 })
 
 app.use("/api/messages",messageRouter)
+app.use("/api/resume",resumeRouter)
 
 
 app.listen(port, () => {
